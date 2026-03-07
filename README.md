@@ -1,42 +1,49 @@
-# sv
+# DeployWise — SvelteKit Template
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A production-ready SvelteKit starter, pre-configured for one-click deployment to your VPS with [DeployWise](https://deploywise.dev).
 
-## Creating a project
+## What's Included
 
-If you're seeing this, you've probably already done this step. Congrats!
+- SvelteKit with TypeScript
+- Vite-powered dev server
+- adapter-node ready for PM2 deployment
 
-```sh
-# create a new project
-npx sv create my-app
-```
+## Quick Start
 
-To recreate this project with the same configuration:
-
-```sh
-# recreate this project
-npx sv create --template minimal --types ts --no-install sveltekit
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
+```bash
+npm install
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+Open [http://localhost:5173](http://localhost:5173).
 
-To create a production version of your app:
+## Deploy with DeployWise
 
-```sh
-npm run build
+1. Push this repo to GitHub
+2. Open [deploywise.dev/dashboard](https://deploywise.dev/dashboard)
+3. Add your VPS → Create a project → Select this repo
+4. Click **Deploy**
+
+DeployWise automatically runs `vite build`, starts with PM2 (via adapter-node), configures Nginx, and issues a free SSL certificate.
+
+## Project Structure
+
+```
+├── src/
+│   ├── routes/
+│   │   └── +page.svelte  # Home page
+│   └── app.html           # HTML template
+├── svelte.config.js       # SvelteKit config
+├── vite.config.ts         # Vite config
+└── package.json
 ```
 
-You can preview the production build with `npm run preview`.
+## Learn More
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+- [Deploy SvelteKit to VPS Guide](https://deploywise.dev/guides/deploy-sveltekit-to-vps)
+- [DeployWise Docs](https://deploywise.dev/docs)
+- [SvelteKit Documentation](https://svelte.dev/docs/kit)
+
+---
+
+Deployed with [DeployWise](https://deploywise.dev) — free, open source.
